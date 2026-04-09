@@ -1,3 +1,5 @@
+#![doc = include_str!("../README.md")]
+
 use argh::{self, FromArgs};
 use crossterm::{event, terminal};
 use std::io;

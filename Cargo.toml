@@ -2,6 +2,14 @@
 name = "pressakey"
 version = "0.1.0"
 edition = "2024"
+license = "MPL-2.0"
+readme = "README.md"
+repository = "https://codeberg.org/quendimax/bumpish"
+authors = ["Maksim Tomkavich <quendimax@gmail.com>"]
+
+description = " Crossplatform terminall app to wait until a user press a key "
+keywords = ["terminal"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 argh = "0.1"
