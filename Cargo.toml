@@ -7,7 +7,7 @@ readme = "README.md"
 repository = "https://github.com/quendimax/pressakey"
 authors = ["Maksim Tomkavich <quendimax@gmail.com>"]
 
-description = "Crossplatform terminal app to wait until a user presses a key"
+description = "Cross-platform terminal app that waits until a user presses a key"
 keywords = ["terminal"]
 categories = ["command-line-utilities"]
 
