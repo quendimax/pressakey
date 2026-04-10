@@ -23,10 +23,20 @@ struct Args {
     /// print info about key presses
     #[argh(switch, short = 'v')]
     verbose: bool,
+
+    /// print version information
+    #[argh(switch, short = 'V')]
+    version: bool,
 }
 
 fn main() -> io::Result<()> {
     let args: Args = argh::from_env();
+
+    if args.version {
+        println!("{}", env!("CARGO_PKG_VERSION"));
+        return Ok(());
+    }
+
     if !args.silent {
         if let Some(prompt) = args.prompt {
             println!("{prompt}");
