@@ -52,7 +52,7 @@ fn main() -> io::Result<()> {
             && key_event.kind == KeyEventKind::Press
         {
             if args.verbose {
-                eprintln!("{key_event:?}");
+                eprint!("{key_event:?}\r\n");
             }
             match (&args.expect, key_event.code.as_char()) {
                 (Some(expect), Some(input)) if expect.contains(input) => break,
