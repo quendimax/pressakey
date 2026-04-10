@@ -1,7 +1,8 @@
 #![doc = include_str!("../README.md")]
 
 use argh::{self, FromArgs};
-use crossterm::{event, terminal};
+use crossterm::event::{self, KeyEventKind};
+use crossterm::terminal;
 use std::io;
 
 /// Simple crossplatform program that is waiting until a key is pressed
@@ -18,6 +19,10 @@ struct Args {
     /// suppress any prompt printing, even a new line
     #[argh(switch, short = 's')]
     silent: bool,
+
+    /// print info about key presses
+    #[argh(switch, short = 'v')]
+    verbose: bool,
 }
 
 fn main() -> io::Result<()> {
@@ -33,7 +38,12 @@ fn main() -> io::Result<()> {
     terminal::enable_raw_mode()?;
     loop {
         let ev = event::read()?;
-        if let Some(key_event) = ev.as_key_event() {
+        if let Some(key_event) = ev.as_key_event()
+            && key_event.kind == KeyEventKind::Press
+        {
+            if args.verbose {
+                eprintln!("{key_event:?}");
+            }
             match (&args.expect, key_event.code.as_char()) {
                 (Some(expect), Some(input)) if expect.contains(input) => break,
                 (None, ..) => break,
