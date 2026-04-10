@@ -8,7 +8,7 @@ use std::io;
 /// Simple crossplatform program that is waiting until a key is pressed
 #[derive(FromArgs)]
 struct Args {
-    /// expected keys to press to exit; if skipped, any key is expected
+    /// expected keys to exit; if none are specified, press any non-modifier key
     #[argh(option, short = 'e')]
     expect: Option<String>,
 
@@ -38,10 +38,14 @@ fn main() -> io::Result<()> {
     }
 
     if !args.silent {
-        if let Some(prompt) = args.prompt {
+        if let Some(prompt) = &args.prompt {
             println!("{prompt}");
         } else {
-            println!("Press any key...");
+            if let Some(syms) = &args.expect {
+                println!("Press any of the following keys to exit: `{syms}`...");
+            } else {
+                println!("Press any key to exit...");
+            }
         }
     }
 
