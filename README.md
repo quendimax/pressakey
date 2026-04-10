@@ -8,7 +8,7 @@
 ## Why this app exists?
 
 There is no a crossplatform **Press any key** tool that would be possible to use
-with any shell you prefer (at least I couldn't find that kind of tool). Now in
+with a shell you prefer (at least I couldn't find that kind of tool). Now in
 different shells different tools/commands are used, e.g. `read` in bash and
 fish, `pause` in cmd.exe, etc. But even `read` in different shells has different
 behaviour of its parameters.
