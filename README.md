@@ -1,4 +1,4 @@
-# preassakey
+# pressakey
 
 ## Why this app exists?
 
