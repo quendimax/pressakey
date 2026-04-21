@@ -39,12 +39,12 @@ fn main() -> io::Result<()> {
 
     if !args.silent {
         if let Some(prompt) = &args.prompt {
-            println!("{prompt}");
+            print!("{prompt}");
         } else {
             if let Some(syms) = &args.expect {
-                println!("Press any of the following keys to exit: `{syms}`...");
+                print!("Press any of the following keys to exit: `{syms}` ...");
             } else {
-                println!("Press any key to exit...");
+                print!("Press any key to exit...");
             }
         }
     }
@@ -65,6 +65,7 @@ fn main() -> io::Result<()> {
             }
         }
     }
+    print!("\r\n");
     terminal::disable_raw_mode()?;
     Ok(())
 }
