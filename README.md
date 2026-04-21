@@ -1,7 +1,6 @@
 # pressakey
 
 [![Crates.io Version](https://img.shields.io/crates/v/pressakey)](https://crates.io/crates/pressakey)
-[![docs.rs (with version)](https://img.shields.io/docsrs/pressakey/latest)](https://docs.rs/bumpish/latest/pressakey/)
 [![Crates.io Total Downloads](https://img.shields.io/crates/d/pressakey)](https://crates.io/crates/pressakey)
 [![License](https://img.shields.io/badge/License-MPL%202.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
 
