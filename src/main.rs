@@ -3,7 +3,7 @@
 use argh::{self, FromArgs};
 use crossterm::event::{self, KeyEventKind};
 use crossterm::terminal;
-use std::io;
+use std::io::{self, Write};
 
 /// Simple crossplatform program that is waiting until a key is pressed
 #[derive(FromArgs)]
@@ -48,6 +48,7 @@ fn main() -> io::Result<()> {
             }
         }
     }
+    io::stdout().flush()?;
 
     terminal::enable_raw_mode()?;
     loop {
